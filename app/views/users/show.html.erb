@@ -1,0 +1,11 @@
+<h1>Welcome, <%= @user.name%> </h1>
+
+<h3>Search bar:</h3>
+
+<h3>Upcoming Reservations</h3>
+
+<ul>
+    <% @user.reservations.each do |res|%>
+        <li><%= link_to res.restaurant.name, user_reservation_path %></li>
+    <% end %>
+</ul>
