@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :reviews
   # resources :reservations
   resources :users do 
-    resources :reservations
+    resources :reservations, only: [:show]
   end
   resources :restaurants
   resources :cities

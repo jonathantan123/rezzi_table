@@ -1,9 +1,10 @@
 class ReservationsController < ApplicationController
     def show
-        @user = User.find(params[:id])
-        @reservations = @user.reservations
+        # @user = User.find(params[:id])
+        # @reservations = Reservation.where(user_id: @user.id)
         # @restaurant = @reservation.restaurant
-        @reservation = @user.reservations.find_by(params[:id])
+        # @reservation = @user.reservations.find_by("id = ?", params[:reservation_id])
+       @reservation = Reservation.find(params[:id])
     end
 
     private
