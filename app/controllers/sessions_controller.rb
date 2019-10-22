@@ -11,6 +11,6 @@ class SessionsController < ApplicationController
 
       
         redirect_to user_path( session[:user])
-      end
+    end
 
 end 

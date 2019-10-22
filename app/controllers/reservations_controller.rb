@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
-    
+    def new
+        
+    end
 
     def show
         @user = User.find(session[:user])
