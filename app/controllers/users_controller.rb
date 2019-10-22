@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
     # homepage page
     def show
-        @user = User.find(params[:id])
-        @reservations = @user.reservations
+    @user = User.find(session[:user])
+    @reservations = @user.reservations
     end
 
     # create new account
