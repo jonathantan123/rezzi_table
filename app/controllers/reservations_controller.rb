@@ -17,23 +17,31 @@ class ReservationsController < ApplicationController
     def show
         @user = User.find(session[:user])
         @reservation = Reservation.find(params[:id])
-
     end
 
     def edit 
+        @user = User.find(session[:user])
         @reservation = Reservation.find(params[:id])
         @restaurant = @reservation.restaurant
-
     end 
 
     def update 
         @user = User.find(session[:user])
         @reservation = Reservation.find(params[:id])
         @reservation.update(reservation_params)
-            if @reservation.save 
-                redirect_to user_path(@user)
-            end 
+        
+        if @reservation.save 
+            redirect_to user_path(@user)
+        end 
     end 
+
+    def destroy
+        @user = User.find(session[:user])
+        @reservation = Reservation.find(params[:id])
+        @reservation.destroy!
+        redirect_to user_path(@user), :notice => "Your reservation has been deleted"
+    end
+    
 
     private
 
