@@ -4,8 +4,11 @@
 
 <h3>Upcoming Reservations</h3>
 
+
+
 <ul>
-    <% @reservations.each do |res| %>
-        <li> <%= link_to res.restaurant.name, [@user, res]%> </li>
+    <% @user.reservations.each do |reservation|%>
+        <li><%= link_to reservation.restaurant.name, reservation_path(reservation.id) %></li>
     <% end %>
 </ul>
+
