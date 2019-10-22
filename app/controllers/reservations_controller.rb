@@ -1,14 +1,37 @@
 class ReservationsController < ApplicationController
+    
+    
+    
     def show
-        @user = User.find(params[:id])
-        @reservations = @user.reservations
-        # @restaurant = @reservation.restaurant
-        @reservation = @user.reservations.find_by(params[:id])
+        @user = User.find(session[:user])
+        @reservation = Reservation.find(params[:id])
+
     end
+
+    def edit 
+        @reservation = Reservation.find(params[:id])
+        @restaurant = @reservation.restaurant
+
+    end 
+
+    def update 
+
+        @user = User.find(session[:user])
+        @reservation = Reservation.find(params[:id])
+        @reservation.update(reservation_params)
+            if @reservation.save 
+                redirect_to user_path(@user)
+            end 
+
+
+    end 
+
 
     private
 
     def reservation_params
-        params.require(:reservations).permit(:user_id, :id)
+        params.require(:reservation).permit(:reservation_time, :reservation_date, :party_size)
     end
+
+
 end
