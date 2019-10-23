@@ -6,7 +6,7 @@
 
 <ul>
     <% @user.reservations.each do |reservation|%>
-        <li><%= link_to reservation.restaurant.name, reservation_path(reservation.id) %></li>
+        <li><%= link_to reservation.restaurant.name, restaurant_path(reservation.restaurant) %></li>
     <% end %>
 </ul>
 
@@ -14,7 +14,4 @@
 <h3> Past Reservations</h3>
 
 <h3>My Reviews</h3>
-
-<%= button_to "Log out", logout_path %>
-
 

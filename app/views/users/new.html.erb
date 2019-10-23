@@ -1,20 +1,22 @@
 <% if flash[:errors]%>
-    <% flash[:errors].each do |msg| %>
-        <%= msg %>
-    <% end %>
+   <% flash[:errors].each do |msg| %>
+       <%= msg %>
+   <% end %>
 <% end %>
-
-
-<h1>Welcome to RezziTable!</h1>
-
-<%= form_with model: @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br><br>
-<%= f.label :username%>
-<%= f.text_field :username %><br><br>
-<%= f.label :password%>
-<%= f.password_field :password %><br><br>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %><br><br>
-<%= f.submit %>
+<h1 class="text-center"> Sign Up  </h1>
+<div class="col-center"><div></div>
+<%= form_with model: @user, html: {class: "form-group"} do |f| %>
+   <div class="text-center">
+       <%= f.text_field :name, placeholder: "name" %>
+   </div>
+   <div class="text-center">
+       <%= f.text_field :username, placeholder: "username"  %>
+   </div>
+   <div class="text-center">
+      <%= f.password_field :password, placeholder: "password" %>
+      <div class="text-center>
+       <%= f.password_field :password_confirmation , placeholder: "confirm password" %>
+      <br>
+       <%= f.submit class: "btn btn-primary" %>
 <% end %>
+<div class="col-center"><div>

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :require_login
+    before_action :authorized
 
     def new 
         @review  = Review.new 
@@ -10,15 +10,11 @@ class ReviewsController < ApplicationController
     def index 
         @user = User.find(session[:user_id])
         @reviews = @user.reviews 
-    
-
     end 
-
 
     def show 
         @review = Review.find_by(params[:id])
     end 
-
 
     def create 
         @review  = Review.new(review_params)

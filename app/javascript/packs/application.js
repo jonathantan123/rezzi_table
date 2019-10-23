@@ -12,6 +12,12 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 
+//= require jquery/dist/jquery
+//= require picker
+//= require picker.date
+//= require picker.time
+
+//= require bootstrap-datepicker
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -19,3 +25,15 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+$(document).ready(function () {
+    var pickerinput = $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 100, // Creates a dropdown of 15 years to control year
+        format: 'dd/mm/yyyy',
+        onClose: function () {
+            if (jq.isFunction(window.onCloseDatePickerCustom)) {
+                onCloseDatePickerCustom();
+            }
+        }
+})
