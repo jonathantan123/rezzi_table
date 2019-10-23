@@ -1,14 +1,9 @@
-<h1><%=@restaurant.name%></h1>
+<h1>Update your reservation at <%=@restaurant.name%> </h1>
 
-<%= form_with model: @reservation do |f| %>
-<%= f.label "reservation_time" %>
-<%= f.text_field :reservation_time %><br><br>
-
-<%= f.label "reservation_date" %>
-<%= f.text_field :reservation_date %><br><br>
-
-<%= f.label "party_size" %>
-<%= f.text_field :party_size %><br><br>
-
-<%= f.submit %>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |message| %>
+       <li> <%= message %> </li>
+    <% end %>
 <% end %>
+
+<%= render "form" %>
