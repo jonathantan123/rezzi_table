@@ -9,7 +9,7 @@
 <% end %>
 
 <h3>New to Resssi Table? </h3>
-<%= button_to "Sign Up", signup_path %>
+<%= button_to "Sign Up", {action: "new", controller: 'users'}, method: :get %>
 
 <% if flash[:error] %>
 <%= flash[:error]%>

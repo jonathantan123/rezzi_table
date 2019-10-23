@@ -9,10 +9,11 @@ class UsersController < ApplicationController
 
     # homepage page
     def show
-    return head(:forbidden) unless session.include? :user_id
+        return head(:forbidden) unless session.include? :user_id
 
-    @user = User.find(session[:user_id])
-    @reservations = @user.reservations
+        @user = User.find(session[:user_id])
+        @reservations = @user.reservations
+
     end
 
     # signup page - needs to be able to be shown if not logged in 
@@ -21,11 +22,10 @@ class UsersController < ApplicationController
     end
 
     def create
-       
         @user = User.new(user_params)
 
         if @user.save
-            redirect_to user_path(@user)
+            redirect_to login_path
         else
             flash[:errors] = @user.errors.full_messages
             redirect_to signup_path
