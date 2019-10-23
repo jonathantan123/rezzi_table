@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+    before_action :require_login
     
     
     
@@ -32,6 +33,10 @@ class ReservationsController < ApplicationController
     def reservation_params
         params.require(:reservation).permit(:reservation_time, :reservation_date, :party_size)
     end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
+      end
 
 
 end

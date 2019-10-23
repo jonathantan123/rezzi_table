@@ -1,5 +1,6 @@
 <h1>Welcome, <%= @user.name%> </h1>
 
+
 <h3>Search bar:</h3>
 
 <h3>Upcoming Reservations</h3>
@@ -11,4 +12,12 @@
         <li><%= link_to reservation.restaurant.name, reservation_path(reservation.id) %></li>
     <% end %>
 </ul>
+
+
+<h3> Past Reservations</h3>
+
+<h3>My Reviews</h3>
+
+<%= button_to "Log out", logout_path %>
+
 
