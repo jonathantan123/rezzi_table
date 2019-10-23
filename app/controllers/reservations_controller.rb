@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
-
+    before_action :require_login
+ 
     def new
         @user = user
         @reservation = Reservation.new
@@ -48,6 +49,25 @@ class ReservationsController < ApplicationController
     end
     
 
+    def edit 
+        @reservation = Reservation.find(params[:id])
+        @restaurant = @reservation.restaurant
+
+    end 
+
+    def update 
+
+        @user = User.find(session[:user])
+        @reservation = Reservation.find(params[:id])
+        @reservation.update(reservation_params)
+            if @reservation.save 
+                redirect_to user_path(@user)
+            end 
+
+
+    end 
+
+
     private
 
     def find_reservation
@@ -60,5 +80,9 @@ class ReservationsController < ApplicationController
 
     def reservation_params
         params.require(:reservation).permit(:reservation_time, :reservation_date, :party_size, :restaurant_id, :user_id)
+    end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
     end
 end

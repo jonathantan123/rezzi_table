@@ -1,3 +1,10 @@
 class Review < ApplicationRecord
-  has_one :reservation
+  belongs_to :reservation
+  validates :rating, presence: true
+
+  def restaurant_name 
+    self.reservation.restaurant.name 
+  end 
+
+
 end
