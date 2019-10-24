@@ -1,9 +1,16 @@
-<h1>Update your reservation<br>at <%=@restaurant.name%> </h1>
+<div class="background-image"> <%= image_tag "7.jpg", :class => "img-fluid" %> </div>
+<div class="edit-reservation-container">
+    <div class="edit-reservation-form-container">
+        <h1 class="edit-reservation-header">Update your reservation<br>at <%=@restaurant.name%> </h1>
 
-<% if flash[:errors] %>
-    <% flash[:errors].each do |message| %>
-       <li> <%= message %> </li>
-    <% end %>
-<% end %>
+        <% if flash[:errors] %>
+            <% flash[:errors].each do |message| %>
+            <li> <%= message %> </li>
+            <% end %>
+        <% end %>
 
-<%= render "form" %>
+        <div class="edit-reservation-form">
+            <%= render "form" %>
+        </div>
+    </div>
+</div>
