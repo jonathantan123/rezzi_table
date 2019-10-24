@@ -6,7 +6,7 @@
 
 <ul>
     <% @user.reservations.each do |reservation|%>
-        <li><%= link_to reservation.restaurant.name, restaurant_path(reservation.restaurant) %></li>
+        <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
     <% end %>
 </ul>
 

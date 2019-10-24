@@ -24,48 +24,7 @@
 //     background-position: center;
 // }
 
-// Restaurant Show Page
 
-.background-image {
-    z-index: -1;
-    position: absolute;
-}
-
-.restaurant-name {
-    // text-align: center;
-}
-
-.restaurant-description-container {
-    padding-top: 10em;
-    display: flex;
-    justify-content: center;
-}
-
-.description-card {
-    width: 950px;
-}
-
-
-// Restaurants Index Page
-
-.container {
-    max-width: 1250px;
-}
-
-.restaurants-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.restaurant-card {
-    margin: 5px;
-    border-radius: 15px;
-}
-
-.restaurant-card-image {
-    overflow: hidden;
-}
 
 
 

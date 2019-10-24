@@ -4,6 +4,14 @@
     <div class="card">
         <div class="card-body description-card">
             <h1 class="restaurant-name" ><%= @restaurant.name %></h1>
+
+            <span>📍<%= @restaurant.neighborhood %></span>
+            <span>🍴<%= @restaurant.cuisine %></span>
+            <span>💸<%= @restaurant.price_range %></span>
+
+            <p><%= @restaurant.description %></p>
+            <p><%= @restaurant.address %></p>
+
             <h3>Avaliable Times:</h3>
 
             <% @times.each do |time| %>
