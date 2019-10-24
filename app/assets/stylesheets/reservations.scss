@@ -42,6 +42,36 @@
     justify-content: center;
 }
 
-.reservation-buttons button {
+.edit-reservation-button {
     margin: 8px;
+}
+
+// Edit reservation page
+
+.edit-reservation-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.edit-reservation-form-container {
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 25px;
+    min-width: 450px;
+    max-width: 650px;
+    height: 500px;
+    padding: 35px;
+    text-align: center;
+}
+
+.edit-reservation-header {
+    text-align: center;
+}
+
+.edit-reservation-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
 }

@@ -13,8 +13,8 @@
 
         <h4 class="change-reservation-header">Change Reservation</h4>
         <div class="reservation-buttons">
-            <button type="button" class="btn btn-outline-primary"><%= link_to "Edit Reservation", edit_reservation_path(@reservation) %></button>
-            <button type="button" class="btn btn-outline-danger"><%= link_to 'Delete', reservation_path(@reservation), method: :delete %></button>        
+            <button type="button" class="btn btn-outline-primary edit-reservation-button"><%= link_to "Edit Reservation", edit_reservation_path(@reservation) %></button>
+            <%= button_to "delete", @recipe, :method => :delete, :class => "btn btn-outline-danger edit-reservation-button" %>
         </div> 
     </div>
 </div>
