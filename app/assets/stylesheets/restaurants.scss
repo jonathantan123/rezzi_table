@@ -4,33 +4,29 @@
 
 // Restaurant Show Page
 
-#short-card-body{
-    height: 300px;
-}
-
 .background-image {
     z-index: -1;
     position: absolute;
 }
 
 .restaurant-description-container {
-    padding-top: 10em;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
-.card-spacing {
-    width: 15px;
+.restaurant-info {
+    margin-top: 80px;
+    max-width: 650px;
+    background-color: white;
+    border-radius: 25px;
 }
 
-.description-card {
-    width: 700px;
+.restaurant-name {
+    padding: 15px;
 }
 
-.reservation-card {
-    width: 300px;
-}
 
 
 
