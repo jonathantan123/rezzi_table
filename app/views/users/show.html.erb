@@ -1,35 +1,38 @@
 <div class="background-image"> <%= image_tag "17.jpg", :class => "img-fluid" %> </div>
 
-<h1 id="user-show-h1">Welcome, <%= @user.name%> </h1>
+<div class="user-reservation-reviews-container">
+    <div class="user-reservation-reviews-card">
+        <h1 id="user-show-h1">Welcome, <%= @user.name%> </h1>
+
+        <div class="user-show-card">
+            <h3 class="show-card-header">Upcoming Reservations</h3>
+            <ul>
+                <% @upcoming_reservations.each do |reservation|%>
+                    <li><%= link_to reservation.restaurant.name , reservation_path(reservation) %></li>
+                <% end %>
+            </ul>
+        </div>
+
+        <div class="user-show-card">
+            <h3 class="show-card-header">Past Reservations</h3>
+            <ul>
+                <% @past_reservations.each do |reservation|%>
+                    <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
+                <% end %>
+            </ul>
+        </div>
+
+        <div class="user-show-card">
+            <h3 class="show-card-header">My Reviews</h3>
+            <ul>
+                <% @user.reviews.each do |review|%>
+                    <li><%= link_to review.reservation.restaurant.name, review_path(review) %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <h3 class="search-bar">Search bar: <%= link_to 'All Restaurants', restaurants_path%></h3>
 
-<div class="user-show-container">
-    <div class="user-show-card">
-        <h3 class="show-card-header">Upcoming Reservations</h3>
-        <ul>
-            <% @upcoming_reservations.each do |reservation|%>
-                <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
-            <% end %>
-        </ul>
-    </div>
-
-    <div class="user-show-card">
-        <h3 class="show-card-header">Past Reservations</h3>
-        <ul>
-            <% @past_reservations.each do |reservation|%>
-                <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
-            <% end %>
-        </ul>
-    </div>
-
-    <div class="user-show-card">
-        <h3 class="show-card-header">My Reviews</h3>
-        <ul>
-            <% @user.reviews.each do |review|%>
-                <li><%= link_to review.reservation.restaurant.name, review_path(review) %></li>
-            <% end %>
-        </ul>
-    </div>
-</div>
 
