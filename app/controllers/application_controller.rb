@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     def authorized
         if !logged_in?
             redirect_to login_path
-        elsif param[:id].to_i != current_user.id 
+        elsif params[:id].to_i != current_user.id 
             redirect_to user_path(current_user)
         end
     end

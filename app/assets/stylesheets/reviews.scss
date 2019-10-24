@@ -1,3 +1,51 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.review_container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding:100px;
+    background-color: lightgray;
+ }
+ .review_card {
+    background-color:white;
+    color:black;
+    font-family: 'Josefin Sans', sans-serif;
+    padding:50px;
+    border-radius:10px;
+    border:1px solid;
+    width:600px;
+    height: 800px;
+    text-align: center;
+ }
+ .attribute_container{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+ }
+ .attribute_container_item{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+ }
+ .attribute_container_item_label{
+    display: flex;
+    flex-direction: column;
+ }
+ #integer_rating {
+    font-size: 4em;
+ }
+ .line {
+    border-top: ridge;
+    border-bottom: ridge;
+ }
+ .new_review_container {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }

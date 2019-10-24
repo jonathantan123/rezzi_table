@@ -1,18 +1,24 @@
-<h1>Welcome to RessiTable</h1>
-
-<%= form_tag login_path do %>
-<%= label_tag "Username" %>
-<%= text_field_tag :username %> <br>
-<%= label_tag "Password" %>
-<%= password_field_tag :password %> <br>
-<%= submit_tag "Log in" %>
-<% end %>
-
-<h3>New to Resssi Table? </h3>
-<%= button_to "Sign Up", {action: "new", controller: 'users'}, method: :get %>
-
-<% if flash[:error] %>
-<%= flash[:error]%>
-<% end %>
+<div class="background-image"> <%= image_tag "7.jpg", :class => "img-fluid" %> </div>
+<div class= content>
+    <h1 class= "text-center">Welcome to RessiTable</h1>
+    <div class="col-center signin-container">
+            <div class= form-group>
+                <%= form_tag login_path do %>
+                <div class="text-center" >
+                    <%= text_field_tag :username, nil, placeholder: "username"%> <br>
+                </div>
+                <div class="text-center">
+                    <%= password_field_tag :password, nil, placeholder: "password" %> <br><br>
+                </div>
+                    <%= submit_tag  "Log in", class: "btn btn-primary btn-block" %>
+                    <% end %>
+                <p id="signup">New to Resssi Table? </p>
+                    <%= button_to "Sign Up", {action: "new", controller: 'users'}, method: :get, class: "btn btn-primary btn-block" %>
+            </div>
+    </div>
+   <% if flash[:error] %>
+   <%= flash[:error]%>
+   <% end %>
+</div>
 
  

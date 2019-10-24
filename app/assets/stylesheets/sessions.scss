@@ -1,0 +1,34 @@
+.content{
+    max-width: 500px;
+    margin: auto;
+    font-family: 'Josefin Sans', sans-serif;
+ }
+
+ .content h1 {
+   color: white;
+   padding-top: 2em;
+ }
+
+ .signin-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:100px;
+ }
+ .form-group {
+    background-color:#eee;
+    color:#666;
+    padding:50px;
+    border-radius:10px;
+    border:1px solid #fff;
+    width: 320px;
+    height: 280px;
+ }
+ #signup {
+    color: grey;
+    padding:px;
+    font-style: italic;
+    font-weight: bold;        
+ }

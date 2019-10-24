@@ -1,19 +1,19 @@
+require 'date'
+
 class UsersController < ApplicationController
     
-
-
-    def index
-        
+    def index 
     end
     
-
     # homepage page
     def show
         return head(:forbidden) unless session.include? :user_id
 
         @user = User.find(session[:user_id])
-        @reservations = @user.reservations
 
+        @upcoming_reservations = @user.reservations.select {|reservation| reservation.reservation_date.to_datetime > DateTime.now}
+        @past_reservations = @user.reservations.select {|reservation| reservation.reservation_date.to_datetime < DateTime.now}
+        @reviews = @user.reviews
     end
 
     # signup page - needs to be able to be shown if not logged in 

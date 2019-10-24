@@ -1,3 +1,51 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// login and signup pages
+.signup-container {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+ .form-group {
+    background-color:#eee;
+    color:#666;
+    padding:50px;
+    border-radius:10px;
+    border:1px solid #fff;
+    width: 320px;
+    height: 280px;
+ }
+ .align-center {
+    text-align: center;
+ }
+
+//  user show page
+
+#user-show-h1 {
+   color: white;
+   text-align: center;
+}
+
+.user-show-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.user-show-card {
+   background: white;
+   border-radius: 5px;
+   margin: 15px;
+   min-width: 400px;
+}
+
+.show-card-header {
+   padding: 15px;
+   text-align: center;
+}

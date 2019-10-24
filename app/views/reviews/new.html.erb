@@ -3,18 +3,14 @@
 <%= msg %>
 <% end %>
 <% end %>
-
-<h1>Leave a Review </h1>
-
-<%= form_with model: @review do |f| %>
-<%= f.label "rating" %>
-<%= f.number_field :rating %><br><br>
-
-<%= f.label "description" %>
-<%= f.text_area :description %><br><br>
-
-<%= f.label "restaurant" %>
-<%= f.collection_select :reservation_id, @reservations, :id, :restaurant_name   %> <br><br>
-
-<%= f.submit %>
-<% end %>
+<div class= "new_review_container">
+   <h1>Leave a Review </h1>
+   <%= form_with model: @review do |f| %>
+       <%= f.number_field :rating, placeholder: "rating"  %><br><br>
+       <%= f.label "description" %>
+       <%= f.text_area :description %><br><br>
+       <%= f.label "restaurant" %>
+       <%= f.collection_select :reservation_id, @reservations, :id, :restaurant_name   %> <br><br>
+       <%= f.submit %>
+   <% end %>
+</div>

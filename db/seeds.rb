@@ -36,35 +36,6 @@
 # ])
 
 
-augustine = Restaurant.find(16)
-augustine.description = "Decorous brasserie by Keith McNally for high-end French dishes, steaks & cocktails."
-augustine.address = "5 Beekman St, New York, NY 10038"
-augustine.price_range = "$$$$"
-augustine.neighborhood = "Financial District"
-augustine.cuisine = "French"
-augustine.image = "7"
-augustine.save
-
-sarabeths = Restaurant.find(17)
-sarabeths.description = "Posh chain serving American fare, including brunch & dessert."
-sarabeths.address = "40 Central Park S, New York, NY 10021"
-sarabeths.price_range = "$$$"
-sarabeths.neighborhood = "Nomad"
-sarabeths.cuisine = "American"
-sarabeths.image = "7"
-sarabeths.save
-
-momofuku = Restaurant.find(18)
-momofuku.description = "David Chang's Asian-accented American fare comes with an open kitchen, spare decor & dinner crowds."
-momofuku.address = "171 1st Avenue, New York, NY 10003"
-momofuku.price_range = "$$"
-momofuku.neighborhood = "East Village"
-momofuku.cuisine = "Asian"
-momofuku.image = "7"
-momofuku.save
-
-
-
 # User.create([
 #     {name: "Brittany Spears", username: "spears1990", password: "password"},
 #     {name: "Justin Bieber", username: "thebeebs", password: "beeberbeliever"},
@@ -94,3 +65,127 @@ momofuku.save
 #     {reservation_id: 8, rating: 5, description: "It was good"}
 # ])
 
+# Reservation.create([
+#     {reservation_date: "10-5-2019", reservation_time: "18:00", restaurant_id: 18, user_id: 12, party_size: 2},
+#     {reservation_date: "10-10-2019", reservation_time: "19:30", restaurant_id: 17, user_id: 12, party_size: 5},
+#     {reservation_date: "9-21-2019", reservation_time: "17:00", restaurant_id: 16, user_id: 12, party_size: 10},
+#     {reservation_date: "8-5-2019", reservation_time: "17:30", restaurant_id: 15, user_id: 12, party_size: 6},
+#     {reservation_date: "11-25-2019", reservation_time: "19:00", restaurant_id: 14, user_id: 12, party_size: 2},
+#     {reservation_date: "10-31-2019", reservation_time: "18:00", restaurant_id: 13, user_id: 12, party_size: 2},
+#     {reservation_date: "12-25-2019", reservation_time: "18:30", restaurant_id: 12, user_id: 12, party_size: 5}
+# ])
+
+r1 = Reservation.find(1)
+r1.reservation_date = '2019-10-05'
+r1.reservation_time = '5:30pm'
+r1.save
+
+r2 = Reservation.find(2)
+r2.reservation_date = '2019-02-19'
+r2.reservation_time = '7:30pm'
+r2.save
+
+r3 = Reservation.find(3)
+r3.reservation_date = '2019-12-25'
+r3.reservation_time = '8:00pm'
+r3.save
+
+r4 = Reservation.find(4)
+r4.reservation_date = '2019-11-10'
+r4.reservation_time = '9:00pm'
+r4.save
+
+r5 = Reservation.find(5)
+r5.reservation_date = '2019-10-19'
+r5.reservation_time = '6:00pm'
+r5.save
+
+r7 = Reservation.find(7)
+r7.reservation_date = '2019-10-12'
+r7.reservation_time = '6:30pm'
+r7.save
+
+r8 = Reservation.find(8)
+r8.reservation_date = '2019-12-19'
+r8.reservation_time = '7:00pm'
+r8.save
+
+r9 = Reservation.find(9)
+r9.reservation_date = '2019-10-1'
+r9.reservation_time = '8:00pm'
+r9.save
+
+r10 = Reservation.find(10)
+r10.reservation_date = '2019-11-17'
+r10.reservation_time = '10:30pm'
+r10.save
+
+r11 = Reservation.find(11)
+r11.reservation_date = '2019-10-26'
+r11.reservation_time = '9:30pm'
+r11.save
+
+r12 = Reservation.find(12)
+r12.reservation_date = '2019-10-23'
+r12.reservation_time = '5:30pm'
+r12.save
+
+r13 = Reservation.find(13)
+r13.reservation_date = '2019-10-23'
+r13.reservation_time = '8:30pm'
+r13.save
+
+r14 = Reservation.find(14)
+r14.reservation_date = '2019-10-25'
+r3.reservation_time = '10:30pm'
+r14.save
+
+r15 = Reservation.find(15)
+r15.reservation_date = '2019-10-26'
+r15.reservation_time = '9:30pm'
+r15.save
+
+r16 = Reservation.find(16)
+r16.reservation_date = '2019-10-10'
+r16.reservation_time = '7:00pm'
+r16.save
+
+r17 = Reservation.find(17)
+r17.reservation_date = '2019-09-21'
+r17.reservation_time = '8:00pm'
+r17.save
+
+r18 = Reservation.find(18)
+r18.reservation_date = '2019-08-05'
+r18.reservation_time = '8:30pm'
+r18.save
+
+r19 = Reservation.find(19)
+r19.reservation_date = '2019-11-25'
+r19.reservation_time = '4:30pm'
+r19.save
+
+r20 = Reservation.find(20)
+r20.reservation_date = '2019-10-31'
+r20.reservation_time = '5:00pm'
+r20.save
+
+r21 = Reservation.find(21)
+r21.reservation_date = '2019-12-25'
+r21.reservation_time = '9:00pm'
+r21.save
+
+r22 = Reservation.find(22)
+r22.reservation_date = '2019-10-25'
+r22.reservation_time = '8:30pm'
+r22.save
+
+r23 = Reservation.find(23)
+r23.reservation_date = '2019-02-02'
+r23.reservation_time = '5:00pm'
+r23.save
+
+r24 = Reservation.find(24)
+r24.reservation_date = '2019-12-14'
+r24.reservation_time = '7:00pm'
+r24.save

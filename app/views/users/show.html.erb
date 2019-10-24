@@ -1,17 +1,35 @@
-<h1>Welcome, <%= @user.name%> </h1>
+<div class="background-image"> <%= image_tag "17.jpg", :class => "img-fluid" %> </div>
 
-<h3>Search bar: <%= link_to 'All Restaurants', restaurants_path%></h3>
+<h1 id="user-show-h1">Welcome, <%= @user.name%> </h1>
 
-<h3>Upcoming Reservations</h3>
+<h3 class="search-bar">Search bar: <%= link_to 'All Restaurants', restaurants_path%></h3>
 
-<ul>
-    <% @user.reservations.each do |reservation|%>
-        <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
-    <% end %>
-</ul>
+<div class="user-show-container">
+    <div class="user-show-card">
+        <h3 class="show-card-header">Upcoming Reservations</h3>
+        <ul>
+            <% @upcoming_reservations.each do |reservation|%>
+                <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
+            <% end %>
+        </ul>
+    </div>
 
+    <div class="user-show-card">
+        <h3 class="show-card-header">Past Reservations</h3>
+        <ul>
+            <% @past_reservations.each do |reservation|%>
+                <li><%= link_to reservation.restaurant.name, reservation_path(reservation) %></li>
+            <% end %>
+        </ul>
+    </div>
 
-<h3> Past Reservations</h3>
-
-<h3>My Reviews</h3>
+    <div class="user-show-card">
+        <h3 class="show-card-header">My Reviews</h3>
+        <ul>
+            <% @user.reviews.each do |review|%>
+                <li><%= link_to review.reservation.restaurant.name, review_path(review) %></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
 
