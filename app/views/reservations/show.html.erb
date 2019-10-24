@@ -1,9 +1,20 @@
-<h1> <%= @reservation.restaurant.name %> </h1>
+<div class="background-image"> <%= image_tag "7.jpg", :class => "img-fluid" %> </div>
 
-Party size: <%= @reservation.party_size %><br>
-Date: <%= @reservation.reservation_date %><br>
-Time: <%= @reservation.reservation_time %><br>
+<div class="reservation-show-container">
+    <div class="reservation-container">
+        <h1 class="reservation-details-header">Your Reservation at <%= @reservation.restaurant.name %></h1>
 
-<%= link_to "Edit Reservation", edit_reservation_path(@reservation) %>
-<br>
-<%= link_to 'Delete', reservation_path(@reservation), method: :delete %>
+        <div class="reservation-details">
+            <h4>Reservation Details</h4>
+            <p>Party size: <%= @reservation.party_size %></p>
+            <p>Date: <%= @reservation.reservation_date %></p>
+            <p>Time: <%= @reservation.reservation_time %></p>
+        </div>
+
+        <h4 class="change-reservation-header">Change Reservation</h4>
+        <div class="reservation-buttons">
+            <button type="button" class="btn btn-outline-primary"><%= link_to "Edit Reservation", edit_reservation_path(@reservation) %></button>
+            <button type="button" class="btn btn-outline-danger"><%= link_to 'Delete', reservation_path(@reservation), method: :delete %></button>        
+        </div> 
+    </div>
+</div>

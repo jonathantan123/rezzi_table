@@ -2,3 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Reservation show page
+
+.reservation-show-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.reservation-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 25px;
+    min-width: 650px;
+    max-width: 850px;
+    height: 500px;
+    padding: 35px;
+    text-align: center;
+}
+
+.reservation-details {
+    padding-top: 30px;
+}
+
+.reservation-details p {
+    padding: 8px;
+}
+
+.change-reservation-header {
+    padding-top: 30px;
+}
+
+.reservation-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.reservation-buttons button {
+    margin: 8px;
+}
