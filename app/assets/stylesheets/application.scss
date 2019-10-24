@@ -37,4 +37,29 @@ body {
     border: white;
 }
 
- 
+.form-group {
+    background-color:#eee;
+    color:#666;
+    padding:50px;
+    border-radius:10px;
+    border:1px solid #fff;
+
+    select,
+    button,
+    textarea,
+    input[type=text],
+    input[type=number], 
+    input[type=password] {
+        width: 100%;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 3px #ddd;
+        border-radius: 4px;
+        padding: 5px 12px;
+        text-transform: capitalize;
+    }
+}
+
+.align-center {
+    text-align: center;
+ }
