@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     padding:100px;
-    background-color: lightgray;
+   //  background-color: lightgray;
  }
  .review_card {
     background-color:white;
@@ -49,3 +49,15 @@
     align-items: center;
     justify-content: center;
  }
+ .new_review_card {
+   background-color:white;
+   color:black;
+   font-family: 'Josefin Sans', sans-serif;
+   padding:50px;
+   border-radius:10px;
+   border:1px solid;
+   border-style: groove;
+   width:500px;
+   height: 400px;
+   text-align: center;
+}

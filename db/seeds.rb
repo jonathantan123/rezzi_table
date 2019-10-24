@@ -6,64 +6,64 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# City.create([
-#     {name: "New York City"},
-#     {name: "Chicago"},
-#     {name: "Boston"},
-#     {name: "Los Angeles"},
-#     {name: "San Francisco"}
-# ])
+City.create([
+    {name: "New York City"},
+    {name: "Chicago"},
+    {name: "Boston"},
+    {name: "Los Angeles"},
+    {name: "San Francisco"}
+])
 
-# Restaurant.create([
-#     {name: "Otto Enoteca & Pizzeria", city_id: 1},
-#     {name: "Cafe 11", city_id: 1},
-#     {name: "The Grotto Pizzeria", city_id: 1},
-#     {name: "Blarney Pub", city_id: 1},
-#     {name: "Toro Loco", city_id: 2},
-#     {name: "Antica", city_id: 2},
-#     {name: "Luke's Lobster", city_id: 2},
-#     {name: "Subway", city_id: 3},
-#     {name: "Ramen Ramen", city_id: 3},
-#     {name: "Flavors Cafe", city_id: 3},
-#     {name: "Gunbae", city_id: 3},
-#     {name: "Ecco", city_id: 4},
-#     {name: "Serafina", city_id: 4},
-#     {name: "1803 NYC", city_id: 4},
-#     {name: "Gran Morsi", city_id: 5},
-#     {name: "Augustine", city_id: 5},
-#     {name: "Sarabeth's", city_id: 5},
-#     {name: "Momofuku", city_id: 5}
-# ])
+Restaurant.create([
+    {name: "Otto Enoteca & Pizzeria", city_id: 1},
+    {name: "Cafe 11", city_id: 1},
+    {name: "The Grotto Pizzeria", city_id: 1},
+    {name: "Blarney Pub", city_id: 1},
+    {name: "Toro Loco", city_id: 2},
+    {name: "Antica", city_id: 2},
+    {name: "Luke's Lobster", city_id: 2},
+    {name: "Subway", city_id: 3},
+    {name: "Ramen Ramen", city_id: 3},
+    {name: "Flavors Cafe", city_id: 3},
+    {name: "Gunbae", city_id: 3},
+    {name: "Ecco", city_id: 4},
+    {name: "Serafina", city_id: 4},
+    {name: "1803 NYC", city_id: 4},
+    {name: "Gran Morsi", city_id: 5},
+    {name: "Augustine", city_id: 5},
+    {name: "Sarabeth's", city_id: 5},
+    {name: "Momofuku", city_id: 5}
+])
 
 
-# User.create([
-#     {name: "Brittany Spears", username: "spears1990", password: "password"},
-#     {name: "Justin Bieber", username: "thebeebs", password: "beeberbeliever"},
-#     {name: "Barack Obama", username: "bobama1990", password: "password"},
-#     {name: "Miley Cyrus", username: "mileyc1990", password: "password"}
-# ])
+User.create([
+    {name: "Brittany Spears", username: "spears1990", password: "password"},
+    {name: "Justin Bieber", username: "thebeebs", password: "beeberbeliever"},
+    {name: "Barack Obama", username: "bobama1990", password: "password"},
+    {name: "Miley Cyrus", username: "mileyc1990", password: "password"}
+])
 
-# Reservation.create([
-#     {reservation_date: "10-5-2019-", reservation_time: "19:00", restaurant_id: 1, user_id: 1, party_size: 1},
-#     {reservation_date: "2-19-2019", reservation_time: "12:30", restaurant_id: 1, user_id: 1, party_size: 6},
-#     {reservation_date: "12-25-2019", reservation_time: "14:00", restaurant_id: 13, user_id: 2, party_size: 3},
-#     {reservation_date: "15-11-2019", reservation_time: "20:00", restaurant_id: 9, user_id: 3, party_size: 2},
-#     {reservation_date: "10-19-2019", reservation_time: "19:30", restaurant_id: 17, user_id: 3, party_size: 12},
-#     {reservation_date: "1-11-2019", reservation_time: "19:00", restaurant_id: 8, user_id: 2, party_size: 2},
-#     {reservation_date: "12-10-2019", reservation_time: "18:00", restaurant_id: 9, user_id: 4, party_size: 5},
-#     {reservation_date: "10-5-2019", reservation_time: "18:30", restaurant_id: 13, user_id: 4, party_size: 10}
-# ])
+Reservation.create([
+    {reservation_date: "2019-4-23", reservation_time: "19:00", restaurant_id: 1, user_id: 1, party_size: 1},
+    {reservation_date: "2019-4-23", reservation_time: "12:30", restaurant_id: 1, user_id: 1, party_size: 6},
+    {reservation_date: "2019-4-23", reservation_time: "14:00", restaurant_id: 13, user_id: 2, party_size: 3},
+    {reservation_date: "2019-4-23", reservation_time: "20:00", restaurant_id: 9, user_id: 3, party_size: 2},
+    {reservation_date: "2019-4-23", reservation_time: "19:30", restaurant_id: 17, user_id: 3, party_size: 12},
+    {reservation_date: "2019-4-23", reservation_time: "19:00", restaurant_id: 8, user_id: 2, party_size: 2},
+    {reservation_date: "2019-4-23", reservation_time: "18:00", restaurant_id: 9, user_id: 4, party_size: 5},
+    {reservation_date: "2019-4-23", reservation_time: "18:30", restaurant_id: 13, user_id: 4, party_size: 10}
+])
 
-# Review.create([
-#     {reservation_id: 1, rating: 5, description: "It was great"},
-#     {reservation_id: 2, rating: 1, description: "I HATE IT"},
-#     {reservation_id: 3, rating: 5, description: "It was okay"},
-#     {reservation_id: 4, rating: 5, description: "It was good"},
-#     {reservation_id: 5, rating: 5, description: "It was good"},
-#     {reservation_id: 6, rating: 5, description: "It was good"},
-#     {reservation_id: 7, rating: 5, description: "It was good"},
-#     {reservation_id: 8, rating: 5, description: "It was good"}
-# ])
+Review.create([
+    {reservation_id: 1, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was great"},
+    {reservation_id: 2, rating: 1, food_rating: 3, decor_rating: 4, service_rating: 2,description: "I HATE IT"},
+    {reservation_id: 3, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was okay"},
+    {reservation_id: 4, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
+    {reservation_id: 5, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
+    {reservation_id: 6, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
+    {reservation_id: 7, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
+    {reservation_id: 8, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"}
+])
 
 # Reservation.create([
 #     {reservation_date: "10-5-2019", reservation_time: "18:00", restaurant_id: 18, user_id: 12, party_size: 2},
@@ -74,6 +74,7 @@
 #     {reservation_date: "10-31-2019", reservation_time: "18:00", restaurant_id: 13, user_id: 12, party_size: 2},
 #     {reservation_date: "12-25-2019", reservation_time: "18:30", restaurant_id: 12, user_id: 12, party_size: 5}
 # ])
+
 
 r1 = Restaurant.find(1)
 r1.name = "Otto Enoteca Pizzeria"
@@ -275,6 +276,7 @@ r6.save
 # r21.cuisine = 'American'
 # r21.save
 
+=======
 # r1 = Reservation.find(1)
 # r1.reservation_date = '2019-10-05'
 # r1.reservation_time = '5:30pm'

@@ -1,7 +1,12 @@
-<h1>My Reviews</h1>
+<div class="background-image"> <%= image_tag "2.jpg", :class => "img-fluid" %> </div>
 
-    <% @reviews.each do |review|%>
-    <%= link_to review.restaurant_name, review_path(review) %>
-   
-    <% end %>
-
+<div class= "review_container">
+    <div class= "new_review_card">
+        <h1>My Reviews</h1>
+        <div = class= line></div>
+        <br><br>
+            <% @reviews.each do |review|%>
+            <h5><%= link_to review.restaurant_name, review_path(review) %></h5><br>
+            <% end %>
+    </div>
+</div>

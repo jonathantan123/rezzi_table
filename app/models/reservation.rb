@@ -11,4 +11,9 @@ class Reservation < ApplicationRecord
   #     reservation_date.to_datetime < DateTime.now
   # end
 
+
+  def restaurant_name
+    self.restaurant.name 
+  end 
+
 end

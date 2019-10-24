@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :authorized
+    # before_action :authorized
 
     def new 
         @review  = Review.new 
