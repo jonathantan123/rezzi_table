@@ -3,20 +3,23 @@
 <div class="restaurant-description-container">
     <div class="restaurant-info">
         <h1 class="restaurant-name" ><%= @restaurant.name %></h1>
-        <button type="button" class="btn btn-outline-primary new-reservation-button"><%= link_to "Create Reservation", new_reservation_path(:restaurant_id => @restaurant.id)  %></button>
 
         <div class="card-body info-card">
             <div class="restaurant-attributes">
-                <span><%= @number_of_reviews %> Reviews | </span>
-                <span>📍<%= @restaurant.neighborhood %> | </span>
-                <span>🍴<%= @restaurant.cuisine %> | </span>
-                <span>💸<%= @restaurant.price_range %></span>
+                <span><%= @number_of_reviews %> Reviews</span>
+                <span>📍<%= @restaurant.neighborhood %></span>
+                <span>🍴<%= @restaurant.cuisine %></span>
+                <span>💸<%= @restaurant.price_range%></span>
             </div>
 
             <div class="restaurant-description">
                 <h4 class="restaurant-show-h4s">Restaurant description</h4>
                 <p><%= @restaurant.description %></p>
             </div>
+        </div>
+
+        <div class="reservation-button-container">
+            <button type="button" class="btn btn-outline-primary new-reservation-button"><%= link_to "Create Reservation", new_reservation_path(:restaurant_id => @restaurant.id)  %></button>
         </div>
 
         <div class="card-body review-card">
@@ -38,7 +41,20 @@
                                 <p>Service </p>
                             </div>
                         </div>
-                        <%= review.description %>
+
+                        <div class="review-card-rating-container">
+                            <p class= "review-card-rating">Overall Rating: <% review.average_rating.times do%>
+                                    ⭑
+                                <% end %>
+                            </p>
+                        </div>
+
+                        <div class="review-user-details">
+                            <i><span> <%= review.reservation.user.name %> </span></i>
+                            <i><span> dined on <%= review.reservation.reservation_date %> </span></i>
+                        </div>
+
+                        <p class="restaurant-review-description"><%= review.description %></p>
                     </div>
                 <% end %>
             <% else %>
