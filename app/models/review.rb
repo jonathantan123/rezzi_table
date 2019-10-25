@@ -1,6 +1,8 @@
 class Review < ApplicationRecord
   belongs_to :reservation
-  validates :rating, presence: true
+  validates :food_rating, presence: true
+  validates :decor_rating, presence: true
+  validates :service_rating, presence: true
   validates :description, length: {minimum: 50}
 
   def restaurant_name 

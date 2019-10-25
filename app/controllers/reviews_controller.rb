@@ -18,21 +18,20 @@ class ReviewsController < ApplicationController
     end 
 
     def create 
-        @review  = Review.new(review_params)
         @user = User.find(session[:user_id])
-            if @review.save 
-                redirect_to user_path(@user)
-            else 
-                flash[:errors] = @review.errors.full_messages 
-                redirect_to new_review_path
-            end 
+        @review  = Review.new(review_params)
+     
+        if @review.save 
+            redirect_to user_path(@user)
+        else 
+            flash[:errors] = @review.errors.full_messages 
+            redirect_to new_review_path
+        end 
     end 
 
     def edit 
         @user = User.find(session[:user_id])
         @review  = @user.reviews.find(params[:id])
-    
-        
     end 
 
 
@@ -46,8 +45,15 @@ class ReviewsController < ApplicationController
             flash[:errors] = @review.errors.full_messages 
             redirect_to edit_review_path
         end 
-
     end 
+
+    def destroy
+        @user = User.find(session[:user_id])
+        @review = @user.reviews.find(params[:id])
+        @review.destroy
+        
+        redirect_to user_path(@user)
+    end
 
 
     private 

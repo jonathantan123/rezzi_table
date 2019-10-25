@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="review-user-details">
-                            <i><span> <%= review.reservation.user.name %> </span></i>
+                            <i><span> <%= review.reservation.user.name %>  </span></i>
                             <i><span> dined on <%= review.reservation.reservation_date %> </span></i>
                         </div>
 
@@ -63,18 +63,7 @@
         </div>
     </div>
 </div>
-<p><%= @restaurant.address %></p>
 
-            <% if false %>
-                <h3>Avaliable Times:</h3>
-
-                <% @times.each do |time| %>
-                    <% new_time = DateTime.parse(time).strftime("%H:%M")%>
-                    <% if !@reservation_times.include?(new_time) %>
-                        <%= link_to time, new_reservation_path(:restaurant_id => @restaurant.id) %><br>
-                    <% end %>
-                <%end%>
-            <% end %>
 
 
 
