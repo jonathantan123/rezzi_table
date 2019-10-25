@@ -1,6 +1,6 @@
 # Rezzi Table
 
-Rezzi Table is a restaurant reservation service that connects users to local restaurants where they can create and edit reservations and reviews. Rezzi Table is a rails app that uses an MVC structure and RESTful conventions.
+Rezzi Table is a restaurant reservation service that connects users to local restaurants where they can create and edit reservations and reviews. Rezzi Table is a Rails app that uses an MVC structure and RESTful conventions. We've used SQLite3 for our database, and have run our migrations with ActiveRecord. 
 
 ## Schema
 
