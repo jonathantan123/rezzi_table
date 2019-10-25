@@ -276,7 +276,7 @@ r6.save
 # r21.cuisine = 'American'
 # r21.save
 
-=======
+
 # r1 = Reservation.find(1)
 # r1.reservation_date = '2019-10-05'
 # r1.reservation_time = '5:30pm'

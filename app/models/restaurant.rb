@@ -6,7 +6,8 @@ class Restaurant < ApplicationRecord
 
   def self.search(search)
     if search 
-      @restaurants= Restaurant.where(name: "#{search}").or(Restaurant.where(cuisine: "#{search}"))
+      @restaurants= Restaurant.where(name: "#{search}").or(Restaurant.where(cuisine: "#{search}")).or(Restaurant.where(neighborhood: "#{search}"))
+
     else 
       @restaurants= Restaurant.all 
     end 

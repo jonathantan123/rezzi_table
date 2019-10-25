@@ -57,7 +57,7 @@ class ReservationsController < ApplicationController
     end
 
     def user
-        User.find(session[:user])
+        User.find(session[:user_id])
     end
 
     def reservation_params
