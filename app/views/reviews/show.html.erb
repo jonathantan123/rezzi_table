@@ -9,8 +9,8 @@
            <p>My Review</p>
            <div class= "attribute_container" >
                <div class= "attribute_container_item">
-                   <p style= "font-size: 2em; border-right: solid 0.25px black;"><%= @review.food_rating%></p>
-                   <p> Food </p>
+                   <p style= "font-size: 2em; border-right: solid 0.25px black;"> <%= @review.food_rating%></p>
+                   <p>  food </p>
                </div>
                <div class= "attribute_container_item">
                    <p style="font-size: 2em; border-right: solid 0.25px black;"><%= @review.decor_rating%></p>
@@ -23,13 +23,14 @@
            </div>
            <div class= "line"> </div>
                <br><br><br>
-               <p class= "review_card_rating">My Rating: <% @review.rating.times do%>
+               <p class= "review_card_rating">Overall Rating: <% @review.average_rating.times do%>
                        ⭑
                    <% end %>
                </p>
                <br>
                <br>
                <br>
-           Description: <%= @review.description %>
+           <p>Description: <%= @review.description %></p>
+          
        </div>
    </div>

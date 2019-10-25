@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
     end 
 
     def show 
-        @review = Review.find_by(params[:id])
+        @user = User.find(session[:user_id])
+        @review  = @user.reviews.find(params[:id])
     end 
 
     def create 
@@ -28,19 +29,19 @@ class ReviewsController < ApplicationController
     end 
 
     def edit 
-        @review  = Review.find(params[:id])
         @user = User.find(session[:user_id])
-
+        @review  = @user.reviews.find(params[:id])
+    
         
     end 
 
 
     def update 
         @review  = Review.find(params[:id])
-        @user = User.find(session[:user_id])
         @review.update(review_params)
+
         if @review.save 
-            redirect_to user_path(@user)
+            redirect_to review_path(@review)
         else 
             flash[:errors] = @review.errors.full_messages 
             redirect_to edit_review_path
@@ -51,7 +52,7 @@ class ReviewsController < ApplicationController
 
     private 
     def review_params 
-        params.require(:review).permit(:rating, :description, :reservation_id)
+        params.require(:review).permit(:rating, :description, :reservation_id, :food_rating, :decor_rating, :service_rating)
     end 
 
 

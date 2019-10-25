@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_151926) do
+ActiveRecord::Schema.define(version: 2019_10_25_030056) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_10_24_151926) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.integer "image_id"
   end
 
   add_foreign_key "reservations", "restaurants"
