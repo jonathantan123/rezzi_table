@@ -2,32 +2,52 @@
 
 <div class="restaurant-description-container">
     <div class="restaurant-info">
-        <div class="card-body description-card">
-                <h1 class="restaurant-name" ><%= @restaurant.name %></h1>
-                <div class="restaurant-attributes">
-                    <span><%= @number_of_reviews %> Reviews</span>
-                    <span>📍<%= @restaurant.neighborhood %></span>
-                    <span>🍴<%= @restaurant.cuisine %></span>
-                    <span>💸<%= @restaurant.price_range %></span>
-                </div>
+        <h1 class="restaurant-name" ><%= @restaurant.name %></h1>
+        <button type="button" class="btn btn-outline-primary new-reservation-button"><%= link_to "Create Reservation", new_reservation_path(:restaurant_id => @restaurant.id)  %></button>
 
+        <div class="card-body info-card">
+            <div class="restaurant-attributes">
+                <span><%= @number_of_reviews %> Reviews | </span>
+                <span>📍<%= @restaurant.neighborhood %> | </span>
+                <span>🍴<%= @restaurant.cuisine %> | </span>
+                <span>💸<%= @restaurant.price_range %></span>
+            </div>
+
+            <div class="restaurant-description">
+                <h4 class="restaurant-show-h4s">Restaurant description</h4>
                 <p><%= @restaurant.description %></p>
-                <p><%= @restaurant.address %></p>
+            </div>
         </div>
 
         <div class="card-body review-card">
-            <% @reviews.each do |review| %>
-                <div class="review-card">
-                    <%= review.food_rating %>
-                    <%= review.decor_rating %>
-                    <%= review.service_rating %>
-                    <%= review.description %>
-                </div>
+            <h4 class="restaurant-show-h4s">Restaurant reviews</h4>
+            <% if @reviews%>
+                <% @reviews.each do |review| %>
+                    <div class="review-card">
+                        <div class= "attribute_container" >
+                            <div class= "attribute_container_item">
+                                <p style= "font-size: 2em; border-right: solid 0.25px black;"><%= review.food_rating%></p>
+                                <p> Food </p>
+                            </div>
+                            <div class= "attribute_container_item">
+                                <p style="font-size: 2em; border-right: solid 0.25px black;"><%= review.decor_rating%></p>
+                                <p>Decor </p>
+                            </div>
+                            <div class= "attribute_container_item">
+                                <p style= "font-size: 2em; border-right: solid 0.25px black;"><%= review.service_rating%></p>
+                                <p>Service </p>
+                            </div>
+                        </div>
+                        <%= review.description %>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>There are no reviews yet!</p>
             <% end %>
         </div>
     </div>
 </div>
-
+<p><%= @restaurant.address %></p>
 
             <% if false %>
                 <h3>Avaliable Times:</h3>
@@ -39,5 +59,7 @@
                     <% end %>
                 <%end%>
             <% end %>
+
+
 
 
