@@ -16,8 +16,11 @@
 }
 
 .restaurant-info {
+    display: flex;
+    flex-direction: column;
     margin-top: 80px;
     max-width: 650px;
+    // width: 100%;
     background-color: white;
     border-radius: 25px;
 }
@@ -25,6 +28,21 @@
 .restaurant-name {
     padding: 35px 15px 0px 15px;
     text-align: center;
+}
+
+.reservation-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.new-reservation-button {
+    width: 200px;
+}
+
+.new-reservation-button a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 .info-card {
@@ -41,6 +59,11 @@
     padding-bottom: 25px;
 }
 
+.restaurant-attributes span {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .restaurant-description {
     display: flex;
     justify-content: center;
@@ -48,11 +71,32 @@
 }
 
 .restaurant-description p {
-    padding: 15px;
+    padding: 0 20px 0 20px;
+    margin-bottom: 0;
 }
 
 .restaurant-show-h4s {
     text-align: center;
+    padding: 20px;
+}
+
+.review-card-rating-container {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.review-card-rating {
+    text-align: center;
+}
+
+.review-user-details {
+    display: flex;
+    justify-content: center;
+}
+
+.restaurant-review-description {
+    padding: 20px;
 }
 
 

@@ -11,10 +11,17 @@
             <p>Time: <%= @reservation.reservation_time %></p>
         </div>
 
-        <h4 class="change-reservation-header">Change Reservation</h4>
-        <div class="reservation-buttons">
-            <button type="button" class="btn btn-outline-primary edit-reservation-button"><%= link_to "Edit Reservation", edit_reservation_path(@reservation) %></button>
-            <%= button_to "delete", @recipe, :method => :delete, :class => "btn btn-outline-danger edit-reservation-button" %>
-        </div> 
+        <% if @reservation.reservation_date.to_datetime > DateTime.now %>
+            <h4 class="change-reservation-header">Change Reservation</h4>
+            <div class="reservation-buttons">
+                <button type="button" class="btn btn-outline-primary edit-reservation-button"><%= link_to "Edit Reservation", edit_reservation_path(@reservation) %></button>
+                <%= button_to "delete", @recipe, :method => :delete, :class => "btn btn-outline-danger edit-reservation-button" %>
+            </div> 
+        <% else %>
+            <div class="review-button-container">
+                <button type="button" class="btn btn-outline-primary leave-review-button"><%= link_to "Review #{@reservation.restaurant.name}", new_review_path(@restaurant) %></button>
+            </div>            
+        <% end %>
+
     </div>
 </div>
