@@ -55,17 +55,22 @@
 }
 
 .edit-reservation-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
     margin-top: 50px;
     background-color: white;
     border-radius: 25px;
     min-width: 450px;
-    max-width: 650px;
+    max-width: min-content;
     height: 500px;
-    padding: 35px;
+    padding: 55px;
     text-align: center;
 }
 
 .edit-reservation-header {
+    padding-top: 25px;
     text-align: center;
 }
 

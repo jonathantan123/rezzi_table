@@ -1,51 +1,53 @@
 <div class="background-image"> <%= image_tag "9.jpg", :class => "img-fluid" %> </div>
 
 <div class="restaurant-description-container">
-    <div class="card">
-        <div class="card-body description-card">
-            <h1 class="restaurant-name" ><%= @restaurant.name %></h1>
+    <div class="restaurant-info">
+        <h1 class="restaurant-name" ><%= @restaurant.name %></h1>
+        <button type="button" class="btn btn-outline-primary new-reservation-button"><%= link_to "Create Reservation", new_reservation_path(:restaurant_id => @restaurant.id)  %></button>
 
-            <span>📍<%= @restaurant.neighborhood %></span>
-            <span>🍴<%= @restaurant.cuisine %></span>
-            <span>💸<%= @restaurant.price_range %></span>
+        <div class="card-body info-card">
+            <div class="restaurant-attributes">
+                <span><%= @number_of_reviews %> Reviews | </span>
+                <span>📍<%= @restaurant.neighborhood %> | </span>
+                <span>🍴<%= @restaurant.cuisine %> | </span>
+                <span>💸<%= @restaurant.price_range %></span>
+            </div>
 
-            <p><%= @restaurant.description %></p>
-            <p><%= @restaurant.address %></p>
-
+            <div class="restaurant-description">
+                <h4 class="restaurant-show-h4s">Restaurant description</h4>
+                <p><%= @restaurant.description %></p>
+            </div>
         </div>
-    </div>
-    <div class="card" style="background:none;"><div class="card-spacing"></div></div>
-    <div class="card">
-        <div id="short-card-body" class="card-body reservation-card">
-            <h3>Make a reservation</h3>
-            <%= form_with model: @reservation do |f| %>
-                <div class="form-group">
-                    <%= f.label "Party Size" %>
-                    <%# <%= f.number_field :party_size %>
-                    <%= f.select :party_size, options_for_select(2..10) %>
 
-                </div>
-
-                <div class="form-group">
-                    <%= f.label "Reservation Date" %>
-                    <%= f.date_field :reservation_date %><br>
-                </div>
-
-                <div class="form-group">
-                    <%= f.label "Reservation Time" %>
-                    <%# <%= f.time_field :reservation_time %>
-                    <%= f.select :reservation_time, options_for_select(@times.reverse) %>
-                </div>
-                
-                <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-                <%= f.hidden_field :user_id, value: session[:user_id] %>
-                
-                <%= f.submit "Submit"%>
+        <div class="card-body review-card">
+            <h4 class="restaurant-show-h4s">Restaurant reviews</h4>
+            <% if @reviews%>
+                <% @reviews.each do |review| %>
+                    <div class="review-card">
+                        <div class= "attribute_container" >
+                            <div class= "attribute_container_item">
+                                <p style= "font-size: 2em; border-right: solid 0.25px black;"><%= review.food_rating%></p>
+                                <p> Food </p>
+                            </div>
+                            <div class= "attribute_container_item">
+                                <p style="font-size: 2em; border-right: solid 0.25px black;"><%= review.decor_rating%></p>
+                                <p>Decor </p>
+                            </div>
+                            <div class= "attribute_container_item">
+                                <p style= "font-size: 2em; border-right: solid 0.25px black;"><%= review.service_rating%></p>
+                                <p>Service </p>
+                            </div>
+                        </div>
+                        <%= review.description %>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>There are no reviews yet!</p>
             <% end %>
         </div>
     </div>
 </div>
-
+<p><%= @restaurant.address %></p>
 
             <% if false %>
                 <h3>Avaliable Times:</h3>
@@ -57,5 +59,7 @@
                     <% end %>
                 <%end%>
             <% end %>
+
+
 
 

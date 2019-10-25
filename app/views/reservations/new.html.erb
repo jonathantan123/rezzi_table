@@ -1,3 +1,10 @@
-<h1>Book a table at <%= link_to @restaurant.name, restaurant_path(@restaurant)%> </h1>
-
-<%= render "form" %>
+<div class="background-image"> <%= image_tag "7.jpg", :class => "img-fluid" %> </div>
+    <div class="edit-reservation-container">
+        <div class="edit-reservation-form-container">
+            <h1 class="edit-reservation-header">Book a reservation<br>at <%=@restaurant.name%> </h1>
+            <div class="reservation-form-container">
+                <%= render "form" %>
+            </div>
+        </div>
+    </div>
+</div>
