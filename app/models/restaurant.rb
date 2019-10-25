@@ -13,6 +13,16 @@ class Restaurant < ApplicationRecord
     end 
   end 
 
+  def self.restaurant_average_rating
+    avg_rating = 0
+
+    self.reviews.each do |review|
+      avg_rating += (review.food_rating + review.decor_rating + review.service_rating / 3)
+    end
+
+    avg_rating
+  end
+
 end
 
 
