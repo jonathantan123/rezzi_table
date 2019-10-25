@@ -31,6 +31,12 @@
                <br>
                <br>
            <p>Description: <%= @review.description %></p>
+
+           <div class="reservation-buttons">
+            <button type="button" class="btn btn-outline-primary edit-reservation-button"><%= link_to "Edit Review", edit_review_path(@review) %></button>
+        </div> 
+
+
           
        </div>
    </div>

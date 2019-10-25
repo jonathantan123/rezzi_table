@@ -32,7 +32,11 @@ class UsersController < ApplicationController
         end
     end
 
-
+    # def update 
+    #     @user = User.new(user_params)
+    #     @user.update(user_params)
+    #     @user.save 
+    # end 
 
 
     private

@@ -38,9 +38,11 @@ Restaurant.create([
 
 User.create([
     {name: "Brittany Spears", username: "spears1990", password: "password"},
-    {name: "Justin Bieber", username: "thebeebs", password: "beeberbeliever"},
-    {name: "Barack Obama", username: "bobama1990", password: "password"},
-    {name: "Miley Cyrus", username: "mileyc1990", password: "password"}
+    {name: "Justin Bieber", username: "thebeebs", password: "beeberbeliever",image_id: 24},
+    {name: "Barack Obama", username: "bobama1990", password: "password", image_id: 22 },
+    {name: "Miley Cyrus", username: "mileyc1990", password: "password", image_id: 26 }
+    {name: "Slave", username: "slave1990", password: "password", image_id: 25}
+    {name: "Mary Farner", username: "mfarner", password: "password", image_id:22}
 ])
 
 Reservation.create([
@@ -52,6 +54,11 @@ Reservation.create([
     {reservation_date: "2019-4-23", reservation_time: "19:00", restaurant_id: 8, user_id: 2, party_size: 2},
     {reservation_date: "2019-4-23", reservation_time: "18:00", restaurant_id: 9, user_id: 4, party_size: 5},
     {reservation_date: "2019-4-23", reservation_time: "18:30", restaurant_id: 13, user_id: 4, party_size: 10}
+    {reservation_date: "2019-4-23", reservation_time: "19:00", restaurant_id: 1, user_id: 5, party_size: 1},
+    {reservation_date: "2019-4-23", reservation_time: "12:30", restaurant_id: 1, user_id: 6, party_size: 6},
+    {reservation_date: "2019-4-23", reservation_time: "14:00", restaurant_id: 13, user_id: 5, party_size: 3},
+    {reservation_date: "2019-4-23", reservation_time: "20:00", restaurant_id: 9, user_id: 6, party_size: 2},
+    
 ])
 
 Review.create([
@@ -63,6 +70,11 @@ Review.create([
     {reservation_id: 6, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
     {reservation_id: 7, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
     {reservation_id: 8, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"}
+    {reservation_id: 12, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
+    {reservation_id: 13, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"}
+    {reservation_id: 9, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"}
+    {reservation_id: 10, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"},
+    {reservation_id: 13, rating: 5, food_rating: 3, decor_rating: 4, service_rating: 2,description: "It was good"}
 ])
 
 # Reservation.create([

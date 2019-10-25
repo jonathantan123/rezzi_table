@@ -4,9 +4,11 @@
     <div class="user-reservation-reviews-card">
         <h1 id="user-show-h1">Welcome, <%= @user.name%> </h1>
 
+        <% if @user.image_id %>
         <div class = "profile_picture_container"> 
-            <%= image_tag "22.jpg", :class => "img-fluid img-thumbnail" %> 
+            <%= image_tag "#{@user.image_id}.jpg", :class => "img-fluid img-thumbnail" %> 
             </div>
+        <% end %>
     
         <div class="user-show-card">
             <h3 class="show-card-header">Upcoming Reservations</h3>

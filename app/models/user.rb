@@ -8,7 +8,6 @@ class User < ApplicationRecord
     validates_uniqueness_of :username
     validates :password, length: {minimum: 6}
 
-
     def reservation_restaurants
         self.reservations
     end 

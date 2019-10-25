@@ -31,13 +31,12 @@ class ReviewsController < ApplicationController
     def edit 
         @user = User.find(session[:user_id])
         @review  = @user.reviews.find(params[:id])
-    
-        
     end 
 
 
     def update 
-        @review  = Review.find(params[:id])
+        @user = User.find(session[:user_id])
+        @review  = @user.reviews.find(params[:id])
         @review.update(review_params)
 
         if @review.save 
@@ -45,10 +44,17 @@ class ReviewsController < ApplicationController
         else 
             flash[:errors] = @review.errors.full_messages 
             redirect_to edit_review_path
-        end 
-
     end 
+end 
 
+
+    # def destroy
+    #     @user = User.find(session[:user_id])
+    #     @review  = @user.reviews.find(params[:id])
+    #     redirect_to user_path(@user), :notice => "Your review has been deleted"
+    # end
+
+  
 
     private 
     def review_params 
