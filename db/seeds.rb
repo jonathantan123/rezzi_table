@@ -11,7 +11,8 @@ City.create([
     {name: "Chicago"},
     {name: "Boston"},
     {name: "Los Angeles"},
-    {name: "San Francisco"}
+    {name: "San Francisco"},
+    {name: "Portland"}
 ])
 
 Restaurant.create([
