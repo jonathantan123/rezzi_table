@@ -38,7 +38,7 @@ Restaurant.create([
 
 
 User.create([
-    {name: "Brittany Spears", username: "spears1990", password: "password"},
+    {name: "Mary Farner", username: "mfarner", password: "password"},
     {name: "Justin Bieber", username: "thebeebs", password: "beeberbeliever"},
     {name: "Barack Obama", username: "bobama1990", password: "password"},
     {name: "Miley Cyrus", username: "mileyc1990", password: "password"}

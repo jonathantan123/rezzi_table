@@ -3,10 +3,12 @@
     <div class="restaurants-container">
         <% @restaurants.each do |restaurant| %>
             <div class="card mb-3 restaurant-card" style="width: 18rem;">
+            <div class= "image-container">
                 <%= image_tag "#{rand(1..15)}.jpg", :class => "card-img-top restaurant-card-image" %>
+            </div>
                 <div class="card-body">
                     <h5 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant)%></h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">Lorem ipsum</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
